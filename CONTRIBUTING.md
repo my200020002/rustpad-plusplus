@@ -53,8 +53,9 @@ translate it (Poedit, Weblate or any text editor) and add it to `CATALOGS` in
 text or keeps one the code no longer has; after changing texts in the code,
 regenerate the template with `cargo test -- --ignored write_pot`.
 
-The Spanish, French, Italian and Brazilian Portuguese catalogs are drafts
-that no native speaker has reviewed yet (their first line says so). A review
+The Spanish, French, Italian, Brazilian Portuguese and Simplified Chinese
+catalogs are drafts that no native speaker has reviewed yet (their first line
+says so). A review
 of one of them, even of a few strings, is a very welcome contribution; once a
 catalog is reviewed, drop the note from its first line.
 

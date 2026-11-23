@@ -1,0 +1,831 @@
+# Simplified Chinese translation of rustpad++.
+msgid ""
+msgstr ""
+"Project-Id-Version: rustpad++\n"
+"Language: zh_CN\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/workspace.rs:1259
+msgid "  value {value} ({hex})"
+msgstr "  值 {value} ({hex})"
+
+#: src/workspace.rs:2489
+msgid " Reloading discards your unsaved changes."
+msgstr " 重新加载会丢弃未保存的更改。"
+
+#: src/menu.rs:214
+msgid "About rustpad++"
+msgstr "关于 rustpad++"
+
+#: src/menu.rs:204
+msgid "All Settings…"
+msgstr "所有设置…"
+
+#: src/settings_window.rs:464
+msgid "Also with Ctrl + / Ctrl − / Ctrl 0"
+msgstr "也可用 Ctrl + / Ctrl − / Ctrl 0"
+
+#: src/settings_window.rs:16
+msgid "Appearance"
+msgstr "外观"
+
+#: src/settings_window.rs:351
+msgid "Applies immediately to all windows"
+msgstr "立即应用到所有窗口"
+
+#: src/settings_window.rs:410
+msgid "Asks GitHub for a newer version 30 seconds after the start and every 6 hours. GitHub sees your IP address, nothing else."
+msgstr "启动 30 秒后以及此后每 6 小时向 GitHub 查询是否有新版本。GitHub 仅会看到您的 IP 地址，别无其他。"
+
+#: src/workspace.rs:2147
+msgid "Author"
+msgstr "作者"
+
+#: src/i18n.rs:73
+msgid "Automatic (system language)"
+msgstr "自动（系统语言）"
+
+#: src/workspace.rs:1294
+msgid "Binary"
+msgstr "二进制"
+
+#: src/workspace.rs:2149
+msgid "Built with"
+msgstr "构建基于"
+
+#: src/workspace.rs:602 src/workspace.rs:685 src/workspace.rs:1523
+msgid "Cancel"
+msgstr "取消"
+
+#: src/workspace.rs:1593
+msgid "Cannot convert to {encoding}: “{char}” does not exist there"
+msgstr "无法转换为 {encoding}：“{char}”在该编码中不存在"
+
+#: src/workspace.rs:291
+msgid "Cannot open {path}: {error}"
+msgstr "无法打开 {path}：{error}"
+
+#: src/workspace.rs:2138
+msgid "Changelog"
+msgstr "更新日志"
+
+#: src/workspace.rs:1930
+msgid "Check for Updates"
+msgstr "检查更新"
+
+#: src/menu.rs:210
+msgid "Check for Updates…"
+msgstr "检查更新…"
+
+#: src/settings_window.rs:409
+msgid "Check for updates"
+msgstr "检查更新"
+
+#: src/workspace.rs:1905
+msgid "Check now"
+msgstr "立即检查"
+
+#: src/update.rs:172
+msgid "Checking…"
+msgstr "正在检查…"
+
+#: src/update.rs:176
+msgid "Checks shortly after the start."
+msgstr "启动后不久会自动检查。"
+
+#: src/settings_window.rs:376
+msgid "Clear ({count})"
+msgstr "清除 ({count})"
+
+#: src/menu.rs:111
+msgid "Clear List"
+msgstr "清空列表"
+
+#: src/menu.rs:201
+msgid "Color Scheme"
+msgstr "配色方案"
+
+#: src/settings_window.rs:569
+msgid "Color scheme"
+msgstr "配色方案"
+
+#: src/workspace.rs:1399 src/workspace.rs:1486
+msgid "Convert to"
+msgstr "转换为"
+
+#: src/menu.rs:168
+msgid "Copy"
+msgstr "复制"
+
+#: src/settings_window.rs:223
+msgid "Could not change the default application: {error}"
+msgstr "无法更改默认应用程序：{error}"
+
+#: src/update.rs:174
+msgid "Could not check for updates."
+msgstr "无法检查更新。"
+
+#: src/menu.rs:66
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: src/menu.rs:167
+msgid "Cut"
+msgstr "剪切"
+
+#: src/theme.rs:186
+msgid "Dark"
+msgstr "深色"
+
+#: src/workspace.rs:1954
+msgid "Debug build"
+msgstr "调试版本"
+
+#: src/settings_window.rs:477
+msgid "Default"
+msgstr "默认"
+
+#: src/settings_window.rs:188
+msgid "Default application"
+msgstr "默认应用程序"
+
+#: src/menu.rs:68
+msgid "Del"
+msgstr "Del"
+
+#: src/menu.rs:170
+msgid "Delete"
+msgstr "删除"
+
+#: src/menu.rs:174
+msgid "Delete Line"
+msgstr "删除行"
+
+#: src/workspace.rs:602
+msgid "Discard"
+msgstr "放弃"
+
+#: src/workspace.rs:853
+msgid "Document changed while searching - nothing replaced"
+msgstr "搜索期间文档已更改 - 未替换任何内容"
+
+#: src/settings_window.rs:397 src/workspace.rs:1870 src/workspace.rs:1915
+msgid "Download"
+msgstr "下载"
+
+#: src/menu.rs:173
+msgid "Duplicate Line"
+msgstr "复制行"
+
+#: src/menu.rs:162
+msgid "Edit"
+msgstr "编辑"
+
+#: src/settings_window.rs:16
+msgid "Editor"
+msgstr "编辑器"
+
+#: src/settings_window.rs:488
+msgid "Editor display"
+msgstr "编辑器显示"
+
+#: src/views/csv.rs:489 src/views/json.rs:596
+msgid "Empty document"
+msgstr "空文档"
+
+#: src/workspace.rs:1145
+msgid "Enter / F3: next   Shift+F3: previous   Esc: close"
+msgstr "Enter / F3：下一个   Shift+F3：上一个   Esc：关闭"
+
+#: src/workspace.rs:903
+msgid "Enter a line number, 0x<hex offset> or <percent>%"
+msgstr "请输入行号、0x<十六进制偏移> 或 <百分比>%"
+
+#: src/workspace.rs:1243
+msgid "Enter: replace and find next"
+msgstr "Enter：替换并查找下一个"
+
+#: src/menu.rs:148
+msgid "File"
+msgstr "文件"
+
+#: src/settings_window.rs:16
+msgid "File Types"
+msgstr "文件类型"
+
+#: src/settings_window.rs:192
+msgid "Files of these types open in rustpad++ when you double-click them in the file manager."
+msgstr "在文件管理器中双击这些类型的文件时，将使用 rustpad++ 打开。"
+
+#: src/workspace.rs:1145
+msgid "Find"
+msgstr "查找"
+
+#: src/menu.rs:178
+msgid "Find Next"
+msgstr "查找下一个"
+
+#: src/menu.rs:179
+msgid "Find Previous"
+msgstr "查找上一个"
+
+#: src/menu.rs:180
+msgid "Find and Replace…"
+msgstr "查找和替换…"
+
+#: src/menu.rs:177
+msgid "Find…"
+msgstr "查找…"
+
+#: src/menu.rs:195
+msgid "Follow End of File (tail -f)"
+msgstr "跟随文件末尾（tail -f）"
+
+#: src/workspace.rs:2527
+msgid "Follow end"
+msgstr "跟随末尾"
+
+#: src/settings_window.rs:461
+msgid "Font"
+msgstr "字体"
+
+#: src/settings_window.rs:482
+msgid "Font family"
+msgstr "字体"
+
+#: src/settings_window.rs:463
+msgid "Font size"
+msgstr "字号"
+
+#: src/settings_window.rs:363
+msgid "Further launches open files as tabs in the running window (fastest)"
+msgstr "再次启动时，在已运行的窗口中以标签页打开文件（最快）"
+
+#: src/settings_window.rs:16
+msgid "General"
+msgstr "常规"
+
+#: src/menu.rs:182
+msgid "Go To…"
+msgstr "转到…"
+
+#: src/workspace.rs:1146
+msgid "Go to"
+msgstr "转到"
+
+#: src/menu.rs:208
+msgid "Help"
+msgstr "帮助"
+
+#: src/menu.rs:189 src/workspace.rs:2125
+msgid "Hex"
+msgstr "十六进制"
+
+#: src/settings_window.rs:373
+msgid "History"
+msgstr "历史记录"
+
+#: src/workspace.rs:2531
+msgid "Ignore"
+msgstr "忽略"
+
+#: src/workspace.rs:2172
+msgid "Inspired by Notepad++ by Don Ho."
+msgstr "灵感来自 Don Ho 的 Notepad++。"
+
+#: src/settings_window.rs:393 src/workspace.rs:1864 src/workspace.rs:1911
+msgid "Install"
+msgstr "安装"
+
+#: src/settings_window.rs:402 src/workspace.rs:1920
+msgid "Install for all users"
+msgstr "为所有用户安装"
+
+#: src/workspace.rs:1931
+msgid "Installed version: {version}"
+msgstr "已安装版本：{version}"
+
+#: src/update.rs:184
+msgid "Installing the update…"
+msgstr "正在安装更新…"
+
+#: src/menu.rs:190 src/workspace.rs:2126
+msgid "JSON Tree"
+msgstr "JSON 树"
+
+#: src/settings_window.rs:368
+msgid "Keep all tabs including unsaved changes on quit, without asking"
+msgstr "退出时保留所有标签页（包括未保存的更改），不再询问"
+
+#: src/settings_window.rs:349
+msgid "Language"
+msgstr "语言"
+
+#: src/views/markdown.rs:846
+msgid "Large document: only the first 16 MiB are rendered."
+msgstr "文档过大：仅渲染前 16 MiB。"
+
+#: src/views/csv.rs:396
+msgid "Large document: only the first 16 MiB are shown."
+msgstr "文档过大：仅显示前 16 MiB。"
+
+#: src/workspace.rs:2100
+msgid "Less editor. More text. Fast."
+msgstr "少一点编辑器，多一点文本，快。"
+
+#: src/theme.rs:225
+msgid "Light"
+msgstr "浅色"
+
+#: src/menu.rs:175
+msgid "Line Endings"
+msgstr "行尾符"
+
+#: src/settings_window.rs:504
+msgid "Line numbers"
+msgstr "行号"
+
+#: src/workspace.rs:895
+msgid "Line {line} not indexed yet ({pct}% scanned) - try 0x<offset> or <n>%"
+msgstr "第 {line} 行尚未建立索引（已扫描 {pct}%）- 请尝试 0x<偏移> 或 <n>%"
+
+#: src/menu.rs:135 src/workspace.rs:1401
+msgid "Linux, macOS (LF)"
+msgstr "Linux、macOS（LF）"
+
+#: src/workspace.rs:1270
+msgid "Ln {line}, Col {column}"
+msgstr "行 {line}，列 {column}"
+
+#: src/file_types.rs:23
+msgid "Log files"
+msgstr "日志文件"
+
+#: src/menu.rs:191 src/workspace.rs:2127
+msgid "Markdown"
+msgstr "Markdown"
+
+#: src/workspace.rs:1201
+msgid "Match case"
+msgstr "区分大小写"
+
+#: src/menu.rs:150
+msgid "New File"
+msgstr "新建文件"
+
+#: src/menu.rs:107
+msgid "No Entries"
+msgstr "无条目"
+
+#: src/workspace.rs:2106
+msgid "No clutter, no waiting - just your file."
+msgstr "没有繁杂，没有等待 - 只有您的文件。"
+
+#: src/settings_window.rs:375
+msgid "No entries"
+msgstr "无条目"
+
+#: src/update.rs:188
+msgid "No password prompt is available here. Run this in a terminal:"
+msgstr "此处无法弹出密码提示。请在终端中运行："
+
+#: src/update.rs:185
+msgid "Not allowed, or wrong password."
+msgstr "操作被拒绝，或密码错误。"
+
+#: src/update.rs:175
+msgid "Not checked: the check is switched off."
+msgstr "未检查：自动检查已关闭。"
+
+#: src/workspace.rs:851 src/workspace.rs:982
+msgid "Not found"
+msgstr "未找到"
+
+#: src/workspace.rs:1260
+msgid "Offset {hex} ({offset}){byte}"
+msgstr "偏移 {hex} ({offset}){byte}"
+
+#: src/menu.rs:151
+msgid "Open File…"
+msgstr "打开文件…"
+
+#: src/menu.rs:169
+msgid "Paste"
+msgstr "粘贴"
+
+#: src/workspace.rs:1274
+msgid "Pos {offset}"
+msgstr "位置 {offset}"
+
+#: src/menu.rs:158 src/workspace.rs:685
+msgid "Quit"
+msgstr "退出"
+
+#: src/workspace.rs:684
+msgid "Quit anyway? The changes will be lost."
+msgstr "仍要退出吗？更改将会丢失。"
+
+#: src/views/csv.rs:394
+msgid "Reading table…"
+msgstr "正在读取表格…"
+
+#: src/menu.rs:152
+msgid "Recent Files"
+msgstr "最近打开的文件"
+
+#: src/settings_window.rs:374
+msgid "Recent files"
+msgstr "最近打开的文件"
+
+#: src/menu.rs:165
+msgid "Redo"
+msgstr "重做"
+
+#: src/workspace.rs:1954
+msgid "Release build"
+msgstr "发行版本"
+
+#: src/workspace.rs:2523
+msgid "Reload"
+msgstr "重新加载"
+
+#: src/workspace.rs:1551 src/workspace.rs:2456
+msgid "Reload failed: {error}"
+msgstr "重新加载失败：{error}"
+
+#: src/views/markdown.rs:844
+msgid "Rendering Markdown…"
+msgstr "正在渲染 Markdown…"
+
+#: src/workspace.rs:1523
+msgid "Reopen"
+msgstr "重新打开"
+
+#: src/workspace.rs:1474
+msgid "Reopen with encoding"
+msgstr "以指定编码重新打开"
+
+#: src/workspace.rs:1521
+msgid "Reopen {name} as {encoding}?"
+msgstr "以 {encoding} 编码重新打开 {name}？"
+
+#: src/workspace.rs:1233 src/workspace.rs:1236
+msgid "Replace"
+msgstr "替换"
+
+#: src/workspace.rs:1240
+msgid "Replace all"
+msgstr "全部替换"
+
+#: src/workspace.rs:856
+msgid "Replaced {n} occurrence"
+msgid_plural "Replaced {n} occurrences"
+msgstr[0] "已替换 {n} 处"
+msgstr[1] "已替换 {n} 处"
+
+#: src/workspace.rs:863
+msgid "Replacing"
+msgstr "正在替换"
+
+#: src/workspace.rs:2136
+msgid "Report a bug"
+msgstr "报告缺陷"
+
+#: src/workspace.rs:2148
+msgid "Repository"
+msgstr "仓库"
+
+#: src/settings_window.rs:367
+msgid "Restore session"
+msgstr "恢复会话"
+
+#: src/workspace.rs:2149
+msgid "Rust and GPUI Community Edition"
+msgstr "Rust 和 GPUI Community Edition"
+
+#: src/menu.rs:154 src/workspace.rs:602
+msgid "Save"
+msgstr "保存"
+
+#: src/menu.rs:156
+msgid "Save All"
+msgstr "全部保存"
+
+#: src/menu.rs:155
+msgid "Save As…"
+msgstr "另存为…"
+
+#: src/workspace.rs:600
+msgid "Save changes to {name}?"
+msgstr "是否保存对 {name} 的更改？"
+
+#: src/workspace.rs:580
+msgid "Save failed: {error}"
+msgstr "保存失败：{error}"
+
+#: src/workspace.rs:577
+msgid "Saved {path}"
+msgstr "已保存 {path}"
+
+#: src/workspace.rs:587
+msgid "Saving"
+msgstr "正在保存"
+
+#: src/workspace.rs:979
+msgid "Search wrapped around"
+msgstr "搜索已绕回开头"
+
+#: src/workspace.rs:988
+msgid "Searching"
+msgstr "正在搜索"
+
+#: src/workspace.rs:1272
+msgid "Sel {n} byte"
+msgid_plural "Sel {n} bytes"
+msgstr[0] "已选 {n} 字节"
+msgstr[1] "已选 {n} 字节"
+
+#: src/menu.rs:171
+msgid "Select All"
+msgstr "全选"
+
+#: src/views/text.rs:710
+msgid "Selection too large for the clipboard (max 64 MiB)"
+msgstr "所选内容过大，无法放入剪贴板（最大 64 MiB）"
+
+#: src/menu.rs:199 src/workspace.rs:2150
+msgid "Settings"
+msgstr "设置"
+
+#: src/placement.rs:19 src/settings_window.rs:44 src/settings_window.rs:57 src/settings_window.rs:354
+msgid "Settings - rustpad++"
+msgstr "设置 - rustpad++"
+
+#: src/file_types.rs:30
+msgid "Shell scripts"
+msgstr "Shell 脚本"
+
+#: src/menu.rs:67
+msgid "Shift"
+msgstr "Shift"
+
+#: src/settings_window.rs:571
+msgid "Show status bar"
+msgstr "显示状态栏"
+
+#: src/settings_window.rs:362
+msgid "Single window"
+msgstr "单窗口"
+
+#: src/workspace.rs:1890
+msgid "Skip this version"
+msgstr "跳过此版本"
+
+#: src/workspace.rs:2135
+msgid "Source code"
+msgstr "源代码"
+
+#: src/settings_window.rs:360
+msgid "Startup"
+msgstr "启动"
+
+#: src/menu.rs:202
+msgid "Status Bar"
+msgstr "状态栏"
+
+#: src/settings_window.rs:490
+msgid "Tab width"
+msgstr "制表符宽度"
+
+#: src/menu.rs:192 src/workspace.rs:2128
+msgid "Table"
+msgstr "表格"
+
+#: src/menu.rs:188 src/workspace.rs:2124
+msgid "Text"
+msgstr "文本"
+
+#: src/file_types.rs:22
+msgid "Text files"
+msgstr "文本文件"
+
+#: src/workspace.rs:2176
+msgid "Thanks for more than 20 years of a great example."
+msgstr "感谢它 20 多年来树立的杰出典范。"
+
+#: src/update.rs:186
+msgid "The update did not work: {error}"
+msgstr "更新未成功：{error}"
+
+#: src/settings_window.rs:443 src/workspace.rs:1944
+msgid "This rustpad++ runs from its build folder. Installed for all users, it gets a menu entry and can update itself."
+msgstr "此 rustpad++ 正从其构建目录运行。为所有用户安装后，它将出现在应用菜单中并能自我更新。"
+
+#: src/menu.rs:164
+msgid "Undo"
+msgstr "撤销"
+
+#: src/workspace.rs:2264
+msgid "Unsaved changes to {name} not restored ({why}) - the backup is in ~/.local/state/rustpad/backup"
+msgstr "{name} 的未保存更改未能恢复（{why}）- 备份位于 ~/.local/state/rustpad/backup"
+
+#: src/settings_window.rs:375
+msgid "Up to 5 files in the File menu"
+msgstr "“文件”菜单中最多显示 5 个文件"
+
+#: src/settings_window.rs:407
+msgid "Updates"
+msgstr "更新"
+
+#: src/settings_window.rs:350
+msgid "User interface"
+msgstr "用户界面"
+
+#: src/settings_window.rs:435 src/workspace.rs:2085
+msgid "Version {version}"
+msgstr "版本 {version}"
+
+#: src/update.rs:171
+msgid "Version {version} is available."
+msgstr "有新版本 {version} 可用。"
+
+#: src/menu.rs:186
+msgid "View"
+msgstr "查看"
+
+#: src/workspace.rs:1888
+msgid "What's new?"
+msgstr "新功能？"
+
+#: src/workspace.rs:1202
+msgid "Whole word"
+msgstr "全字匹配"
+
+#: src/workspace.rs:1601
+msgid "Will be saved as {encoding}"
+msgstr "将保存为 {encoding}"
+
+#: src/workspace.rs:1579
+msgid "Will be saved with {line_endings} line endings"
+msgstr "将使用 {line_endings} 行尾符保存"
+
+#: src/settings_window.rs:570
+msgid "Window"
+msgstr "窗口"
+
+#: src/menu.rs:135 src/workspace.rs:1400
+msgid "Windows (CRLF)"
+msgstr "Windows（CRLF）"
+
+#: src/menu.rs:194
+msgid "Word Wrap"
+msgstr "自动换行"
+
+#: src/settings_window.rs:509
+msgid "Word wrap"
+msgstr "自动换行"
+
+#: src/settings_window.rs:510
+msgid "Wrap long lines at the window width instead of scrolling sideways"
+msgstr "在窗口宽度处折行显示长行，而不是横向滚动"
+
+#: src/workspace.rs:1522
+msgid "Your unsaved changes will be lost."
+msgstr "未保存的更改将会丢失。"
+
+#: src/views/json.rs:949
+msgid "document "
+msgstr "文档 "
+
+#: src/workspace.rs:1290
+msgid "following end of file"
+msgstr "正在跟随文件末尾"
+
+#: src/workspace.rs:1286
+msgid "indexing lines {pct}%"
+msgstr "正在索引行 {pct}%"
+
+#: src/views/json.rs:1035
+msgid "item"
+msgid_plural "items"
+msgstr[0] "项"
+msgstr[1] "项"
+
+#: src/views/json.rs:1033
+msgid "key"
+msgid_plural "keys"
+msgstr[0] "键"
+msgstr[1] "键"
+
+#: src/workspace.rs:1146
+msgid "line number, 0x<offset> or <percent>%"
+msgstr "行号、0x<偏移> 或 <百分比>%"
+
+#: src/views/json.rs:960
+msgid "line {line}"
+msgstr "第 {line} 行"
+
+#: src/update.rs:173
+msgid "rustpad++ is up to date."
+msgstr "rustpad++ 已是最新版本。"
+
+#: src/workspace.rs:1861
+msgid "rustpad++ {version} is available."
+msgstr "rustpad++ {version} 已发布。"
+
+#: src/views/json.rs:994
+msgid "scanning…"
+msgstr "正在扫描…"
+
+#: src/views/json.rs:995
+msgid "scanning… ({count} loaded)"
+msgstr "正在扫描…（已加载 {count}）"
+
+#: src/doc/buffer.rs:878
+msgid "the character “{char}” cannot be saved as {encoding}"
+msgstr "字符“{char}”无法保存为 {encoding}"
+
+#: src/workspace.rs:2260
+msgid "the file was changed externally"
+msgstr "文件已被外部更改"
+
+#: src/doc/buffer.rs:266
+msgid "too large to open as {encoding} (at most {max})"
+msgstr "文件过大，无法以 {encoding} 打开（最大 {max}）"
+
+#: src/views/json.rs:1034
+msgid "value"
+msgid_plural "values"
+msgstr[0] "值"
+msgstr[1] "值"
+
+#: src/workspace.rs:1607
+msgid "{encoding} with BOM"
+msgstr "{encoding}（带 BOM）"
+
+#: src/settings_window.rs:201
+msgid "{extensions} · checking…"
+msgstr "{extensions} · 正在检查…"
+
+#: src/settings_window.rs:202
+msgid "{extensions} · currently: {app}"
+msgstr "{extensions} · 当前：{app}"
+
+#: src/settings_window.rs:203
+msgid "{extensions} · no default application"
+msgstr "{extensions} · 无默认应用程序"
+
+#: src/workspace.rs:2415
+msgid "{name} was truncated externally and reloaded"
+msgstr "{name} 已被外部截断并重新加载"
+
+#: src/workspace.rs:683
+msgid "{n} document with unsaved changes."
+msgid_plural "{n} documents with unsaved changes."
+msgstr[0] "{n} 个文档有未保存的更改。"
+msgstr[1] "{n} 个文档有未保存的更改。"
+
+#: src/workspace.rs:1285
+msgid "{n} line"
+msgid_plural "{n} lines"
+msgstr[0] "{n} 行"
+msgstr[1] "{n} 行"
+
+#: src/workspace.rs:534
+msgid "{n} untitled file: please save it with “Save As”"
+msgid_plural "{n} untitled files: please save them one by one with “Save As”"
+msgstr[0] "{n} 个未命名文件：请使用“另存为”保存"
+msgstr[1] "{n} 个未命名文件：请使用“另存为”逐一保存"
+
+#: src/workspace.rs:284
+msgid "{path} is a directory"
+msgstr "{path} 是一个目录"
+
+#: src/workspace.rs:2491
+msgid "“{name}” has grown outside rustpad++.{lose}"
+msgstr "“{name}”已在 rustpad++ 外部被追加内容。{lose}"
+
+#: src/workspace.rs:2492
+msgid "“{name}” was changed outside rustpad++.{lose}"
+msgstr "“{name}”已在 rustpad++ 外部被更改。{lose}"
+
+#: src/workspace.rs:2494
+msgid "“{name}” was deleted or moved. The content stays open; saving creates the file again."
+msgstr "“{name}”已被删除或移动。内容仍保持打开状态；保存时会重新创建该文件。"
+
+#: src/workspace.rs:2493
+msgid "“{name}” was overwritten outside rustpad++. Please reload.{lose}"
+msgstr "“{name}”已在 rustpad++ 外部被覆盖。请重新加载。{lose}"
+
+#: src/workspace.rs:2495
+msgid "“{name}” was truncated externally. Your changes are kept; parts beyond the new end of file are missing."
+msgstr "“{name}”已被外部截断。您的更改已保留；超出新文件末尾的部分已丢失。"
+
+#: src/views/json.rs:986
+msgid "… load more ({count} loaded)"
+msgstr "… 加载更多（已加载 {count}）"
+
+#: src/views/json.rs:601 src/views/json.rs:1004
+msgid "⚠ invalid JSON at offset {offset}"
+msgstr "⚠ 偏移 {offset} 处存在无效的 JSON"

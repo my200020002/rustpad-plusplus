@@ -113,9 +113,9 @@ memory, without the file's pages that the system caches anyway.
 - **One window**: opening more files from the file manager or the command line
   adds tabs to the running window within milliseconds; the tab bar scrolls
   and lists all tabs when there are many.
-- **Six languages, five color schemes**: English, German, Spanish, French,
-  Italian and Brazilian Portuguese; Dark, Light, Monokai, Solarized Dark and
-  Aurora.
+- **Seven languages, five color schemes**: English, German, Spanish, French,
+  Italian, Brazilian Portuguese and Simplified Chinese; Dark, Light, Monokai,
+  Solarized Dark and Aurora.
 
 Not there (yet): syntax highlighting, regular expressions in find, plugins,
 and builds for other systems than Linux on x86-64.
@@ -168,8 +168,8 @@ encoding is changed by clicking it in the status bar. Settings live in
 
 rustpad++ follows the system language; it can also be set under
 *Settings → General*, the color scheme under *Settings → Appearance*. The
-Spanish, French, Italian and Portuguese translations are new and not yet
-reviewed by native speakers: corrections are very welcome (see
+Spanish, French, Italian, Portuguese and Simplified Chinese translations are
+new and not yet reviewed by native speakers: corrections are very welcome (see
 [CONTRIBUTING.md](CONTRIBUTING.md#translations)).
 
 ## How this project is built

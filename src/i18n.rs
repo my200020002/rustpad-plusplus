@@ -23,6 +23,7 @@ const CATALOGS: &[(&str, &str, &str)] = &[
     ("fr", "Français", include_str!("../po/fr.po")),
     ("it", "Italiano", include_str!("../po/it.po")),
     ("pt_BR", "Português (Brasil)", include_str!("../po/pt_BR.po")),
+    ("zh_CN", "简体中文", include_str!("../po/zh_CN.po")),
 ];
 
 /// Translate a literal UI string; with `name = value` pairs, fill `{name}` placeholders.
@@ -576,5 +577,11 @@ mod tests {
         let pt = CATALOGS.iter().position(|c| c.0 == "pt_BR").unwrap();
         assert_eq!(pick(&wanted_languages(Some("pt_BR.UTF-8"))), pt);
         assert_eq!(pick(&wanted_languages(Some("pt_PT:en"))), pt);
+        // Chinese, with or without the region and the codeset, takes the Simplified Chinese catalog.
+        let zh = CATALOGS.iter().position(|c| c.0 == "zh_CN").unwrap();
+        assert_eq!(pick(&wanted_languages(Some("zh_CN.UTF-8"))), zh);
+        assert_eq!(pick(&wanted_languages(Some("zh"))), zh);
+        assert_eq!(pick(&wanted_languages(Some("zh_SG.UTF-8:en"))), zh);
+        assert_eq!(pick(&wanted_languages(Some("en_US:zh_CN"))), ENGLISH);
     }
 }
