@@ -21,12 +21,6 @@ pub struct Settings {
     pub restore_session: bool,
     /// UI language: "auto" (from the environment) or a code like "de".
     pub language: String,
-    /// Ask GitHub for new releases.
-    pub check_updates: bool,
-    /// A release the user does not want to be offered.
-    pub skipped_version: Option<String>,
-    /// The version that ran last, to show the changelog once after an update.
-    pub last_version: Option<String>,
     /// Last main window placement.
     pub window: Option<gpui::WindowBounds>,
     pub recent: Vec<std::path::PathBuf>,
@@ -98,9 +92,6 @@ impl Settings {
             single_instance: c.get("single_instance") != Some("false"),
             restore_session: c.get("restore_session") != Some("false"),
             language,
-            check_updates: c.get("check_updates") != Some("false"),
-            skipped_version: c.get("skipped_version").filter(|v| !v.is_empty()).map(str::to_string),
-            last_version: c.get("last_version").filter(|v| !v.is_empty()).map(str::to_string),
             window: c.get("window").and_then(parse_window),
             recent: c.recent.clone(),
         }
@@ -119,13 +110,6 @@ impl Settings {
         c.set("single_instance", if self.single_instance { "true" } else { "false" });
         c.set("restore_session", if self.restore_session { "true" } else { "false" });
         c.set("language", &self.language);
-        c.set("check_updates", if self.check_updates { "true" } else { "false" });
-        if let Some(v) = &self.skipped_version {
-            c.set("skipped_version", v);
-        }
-        if let Some(v) = &self.last_version {
-            c.set("last_version", v);
-        }
         if let Some(w) = &self.window {
             c.set("window", &format_window(w));
         }

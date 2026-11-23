@@ -34,10 +34,6 @@ msgstr "外观"
 msgid "Applies immediately to all windows"
 msgstr "立即应用到所有窗口"
 
-#: src/settings_window.rs:410
-msgid "Asks GitHub for a newer version 30 seconds after the start and every 6 hours. GitHub sees your IP address, nothing else."
-msgstr "启动 30 秒后以及此后每 6 小时向 GitHub 查询是否有新版本。GitHub 仅会看到您的 IP 地址，别无其他。"
-
 #: src/workspace.rs:2147
 msgid "Author"
 msgstr "作者"
@@ -70,30 +66,6 @@ msgstr "无法打开 {path}：{error}"
 msgid "Changelog"
 msgstr "更新日志"
 
-#: src/workspace.rs:1930
-msgid "Check for Updates"
-msgstr "检查更新"
-
-#: src/menu.rs:210
-msgid "Check for Updates…"
-msgstr "检查更新…"
-
-#: src/settings_window.rs:409
-msgid "Check for updates"
-msgstr "检查更新"
-
-#: src/workspace.rs:1905
-msgid "Check now"
-msgstr "立即检查"
-
-#: src/update.rs:172
-msgid "Checking…"
-msgstr "正在检查…"
-
-#: src/update.rs:176
-msgid "Checks shortly after the start."
-msgstr "启动后不久会自动检查。"
-
 #: src/settings_window.rs:376
 msgid "Clear ({count})"
 msgstr "清除 ({count})"
@@ -121,10 +93,6 @@ msgstr "复制"
 #: src/settings_window.rs:223
 msgid "Could not change the default application: {error}"
 msgstr "无法更改默认应用程序：{error}"
-
-#: src/update.rs:174
-msgid "Could not check for updates."
-msgstr "无法检查更新。"
 
 #: src/menu.rs:66
 msgid "Ctrl"
@@ -169,10 +137,6 @@ msgstr "放弃"
 #: src/workspace.rs:853
 msgid "Document changed while searching - nothing replaced"
 msgstr "搜索期间文档已更改 - 未替换任何内容"
-
-#: src/settings_window.rs:397 src/workspace.rs:1870 src/workspace.rs:1915
-msgid "Download"
-msgstr "下载"
 
 #: src/menu.rs:173
 msgid "Duplicate Line"
@@ -294,22 +258,6 @@ msgstr "忽略"
 msgid "Inspired by Notepad++ by Don Ho."
 msgstr "灵感来自 Don Ho 的 Notepad++。"
 
-#: src/settings_window.rs:393 src/workspace.rs:1864 src/workspace.rs:1911
-msgid "Install"
-msgstr "安装"
-
-#: src/settings_window.rs:402 src/workspace.rs:1920
-msgid "Install for all users"
-msgstr "为所有用户安装"
-
-#: src/workspace.rs:1931
-msgid "Installed version: {version}"
-msgstr "已安装版本：{version}"
-
-#: src/update.rs:184
-msgid "Installing the update…"
-msgstr "正在安装更新…"
-
 #: src/menu.rs:190 src/workspace.rs:2126
 msgid "JSON Tree"
 msgstr "JSON 树"
@@ -385,18 +333,6 @@ msgstr "没有繁杂，没有等待 - 只有您的文件。"
 #: src/settings_window.rs:375
 msgid "No entries"
 msgstr "无条目"
-
-#: src/update.rs:188
-msgid "No password prompt is available here. Run this in a terminal:"
-msgstr "此处无法弹出密码提示。请在终端中运行："
-
-#: src/update.rs:185
-msgid "Not allowed, or wrong password."
-msgstr "操作被拒绝，或密码错误。"
-
-#: src/update.rs:175
-msgid "Not checked: the check is switched off."
-msgstr "未检查：自动检查已关闭。"
 
 #: src/workspace.rs:851 src/workspace.rs:982
 msgid "Not found"
@@ -578,10 +514,6 @@ msgstr "显示状态栏"
 msgid "Single window"
 msgstr "单窗口"
 
-#: src/workspace.rs:1890
-msgid "Skip this version"
-msgstr "跳过此版本"
-
 #: src/workspace.rs:2135
 msgid "Source code"
 msgstr "源代码"
@@ -614,14 +546,6 @@ msgstr "文本文件"
 msgid "Thanks for more than 20 years of a great example."
 msgstr "感谢它 20 多年来树立的杰出典范。"
 
-#: src/update.rs:186
-msgid "The update did not work: {error}"
-msgstr "更新未成功：{error}"
-
-#: src/settings_window.rs:443 src/workspace.rs:1944
-msgid "This rustpad++ runs from its build folder. Installed for all users, it gets a menu entry and can update itself."
-msgstr "此 rustpad++ 正从其构建目录运行。为所有用户安装后，它将出现在应用菜单中并能自我更新。"
-
 #: src/menu.rs:164
 msgid "Undo"
 msgstr "撤销"
@@ -634,10 +558,6 @@ msgstr "{name} 的未保存更改未能恢复（{why}）- 备份位于 ~/.local/
 msgid "Up to 5 files in the File menu"
 msgstr "“文件”菜单中最多显示 5 个文件"
 
-#: src/settings_window.rs:407
-msgid "Updates"
-msgstr "更新"
-
 #: src/settings_window.rs:350
 msgid "User interface"
 msgstr "用户界面"
@@ -646,17 +566,9 @@ msgstr "用户界面"
 msgid "Version {version}"
 msgstr "版本 {version}"
 
-#: src/update.rs:171
-msgid "Version {version} is available."
-msgstr "有新版本 {version} 可用。"
-
 #: src/menu.rs:186
 msgid "View"
 msgstr "查看"
-
-#: src/workspace.rs:1888
-msgid "What's new?"
-msgstr "新功能？"
 
 #: src/workspace.rs:1202
 msgid "Whole word"
@@ -725,14 +637,6 @@ msgstr "行号、0x<偏移> 或 <百分比>%"
 #: src/views/json.rs:960
 msgid "line {line}"
 msgstr "第 {line} 行"
-
-#: src/update.rs:173
-msgid "rustpad++ is up to date."
-msgstr "rustpad++ 已是最新版本。"
-
-#: src/workspace.rs:1861
-msgid "rustpad++ {version} is available."
-msgstr "rustpad++ {version} 已发布。"
 
 #: src/views/json.rs:994
 msgid "scanning…"

@@ -1,4 +1,8 @@
 //! How rustpad++ is installed, and where its parts are then.
+//!
+//! Only what the app itself needs to know about its own installation: from the
+//! Debian package, under `/usr/local`, as an AppImage, or run from where it was
+//! built. Used to find the right menu entry and the AppImage file.
 
 use std::{
     path::{Path, PathBuf},
@@ -21,16 +25,12 @@ pub const DEB: Paths = Paths {
     icons: "/usr/share/icons/hicolor",
 };
 
-/// Installed from the settings ("Install for all users") or by an update of
-/// such an installation.
+/// Installed by hand under `/usr/local`.
 pub const LOCAL: Paths = Paths {
     app: "/usr/local/bin/rustpad",
     desktop: "/usr/local/share/applications/rustpad.desktop",
     icons: "/usr/local/share/icons/hicolor",
 };
-
-/// The polkit rules that let the installed program update itself.
-pub const POLICY: &str = "/usr/share/polkit-1/actions/io.github.srcmkr.rustpad.policy";
 
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub enum Install {
@@ -46,8 +46,8 @@ pub enum Install {
 
 impl Install {
     /// How the running program is installed. Found out on the first call and
-    /// kept: once an update has replaced the program, its path reads
-    /// "/usr/bin/rustpad (deleted)" and no longer says where it came from.
+    /// kept: once the binary is replaced by a rebuild, its path reads
+    /// "/path/to/rustpad (deleted)" and no longer says where it came from.
     pub fn current() -> Self {
         static CURRENT: OnceLock<Install> = OnceLock::new();
         CURRENT.get_or_init(Self::detect).clone()
@@ -80,7 +80,7 @@ impl Install {
         }
     }
 
-    /// The program to start, e.g. after an update.
+    /// The program to start, e.g. for the menu entry.
     pub fn app(&self) -> Option<PathBuf> {
         match self {
             Install::Deb => Some(DEB.app.into()),
@@ -96,11 +96,6 @@ impl Install {
     }
 }
 
-/// `@APP@` in a packaging template, for `paths`.
-pub fn fill(template: &str, paths: &Paths) -> String {
-    template.replace("@APP@", paths.app)
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -110,7 +105,6 @@ mod tests {
         assert_eq!(Install::of(Path::new("/usr/bin/rustpad")), Install::Deb);
         assert_eq!(Install::of(Path::new("/usr/local/bin/rustpad")), Install::Local);
         assert_eq!(Install::of(Path::new("/home/me/rustpad++/target/release/rustpad")), Install::Build);
-        assert_eq!(fill("Exec=@APP@ %F", &DEB), "Exec=/usr/bin/rustpad %F");
         assert!(Install::Local.is_system() && !Install::Build.is_system());
     }
 

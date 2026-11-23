@@ -2,10 +2,7 @@ name: release
 
 # Push a tag like v0.2.0 whose number matches Cargo.toml. The release is
 # built, packed as archive, Debian package and AppImage
-# (packaging/build-packages.sh), signed with the key in the secret
-# MINISIGN_SECRET_KEY (see crates/rustpad-update/examples/release-key.rs) and
-# published as the latest release, which installed copies of rustpad++ then
-# offer as an update.
+# (packaging/build-packages.sh) and published as the latest release.
 
 on:
   push:
@@ -30,8 +27,6 @@ jobs:
           v=${GITHUB_REF_NAME#v}
           awk -v v="$v" '$0 == "## " v || index($0, "## " v " ") == 1 { on = 1; next } on && /^## / { exit } on' CHANGELOG.md > notes.md
           grep -q '[^[:space:]]' notes.md || { echo "CHANGELOG.md has no section for $v"; exit 1; }
-      - name: Release key is there
-        run: test -s packaging/minisign.pub || { echo "packaging/minisign.pub is empty"; exit 1; }
       - name: System libraries
         run: |
           sudo apt-get update
@@ -41,13 +36,6 @@ jobs:
       - run: cargo build --locked --release
       - name: Packages
         run: packaging/build-packages.sh "${GITHUB_REF_NAME#v}"
-      - name: Sign
-        env:
-          MINISIGN_SECRET_KEY: ${{ secrets.MINISIGN_SECRET_KEY }}
-        run: |
-          for file in dist/*.tar.gz dist/*.deb dist/*.AppImage; do
-            cargo run --locked --release -p rustpad-update --example sign -- "$file"
-          done
       - name: Upload as a draft
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

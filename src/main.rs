@@ -5,15 +5,14 @@ mod config;
 mod doc;
 mod file_types;
 mod icon;
+mod install;
 mod instance;
-mod manage;
 mod placement;
 mod prompt;
 mod session;
 mod settings_window;
 mod theme;
 mod ui;
-mod update;
 mod views;
 mod workspace;
 
@@ -44,12 +43,6 @@ fn main() {
     let t0 = Instant::now();
     // Non-UTF-8 arguments are file names, handled below.
     let args: Vec<String> = std::env::args_os().skip(1).filter_map(|a| a.into_string().ok()).collect();
-    // Run as root through pkexec, without any UI.
-    if let [action] = args.as_slice()
-        && let Some(code) = manage::run(action)
-    {
-        std::process::exit(code);
-    }
     // For packaging: the menu entry for a program installed at PATH.
     if let [flag, path] = args.as_slice()
         && flag == "--desktop-entry"
@@ -57,8 +50,8 @@ fn main() {
         print!("{}", icon::desktop_entry(path));
         return;
     }
-    // Before an update can replace this program and blur where it lives.
-    rustpad_update::layout::Install::current();
+    // Before a rebuild can replace this program and blur where it lives.
+    install::Install::current();
     let mut bench = false;
     let mut new_instance = false;
     let mut files = Vec::new();
@@ -127,14 +120,6 @@ fn main() {
         icon::apply();
         if !bench {
             icon::register();
-            // After an update: quit like the user would, then the new copy starts.
-            cx.set_global(update::Quitter(std::rc::Rc::new(move |cx: &mut App| {
-                window.update(cx, |ws, window, cx| ws.quit(&Quit, window, cx)).ok();
-            })));
-            update::init(cx);
-            if update::first_start_after_update(cx) {
-                window.update(cx, |ws, window, cx| ws.show_changelog(window, cx)).ok();
-            }
         }
 
         if let Some(rx) = incoming {

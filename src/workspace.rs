@@ -19,7 +19,6 @@ mod menu;
 use crate::doc::Buffer;
 use crate::doc::buffer::{DiskChange, LineEnding};
 use crate::session;
-use crate::update;
 use crate::doc::detect::{self, Kind};
 use crate::doc::encoding::{self, Encoding};
 use crate::doc::rows;
@@ -112,7 +111,6 @@ struct Job {
 #[derive(Clone, Copy, PartialEq, Eq)]
 pub(crate) enum Dialog {
     About,
-    Updates,
 }
 
 pub struct Workspace {
@@ -1749,7 +1747,6 @@ impl Render for Workspace {
             )
             .children(self.render_bar(cx))
             .children(self.render_external(cx))
-            .children(Self::render_update_bar(cx))
             .child(div().flex_1().min_h_0().overflow_hidden().child(content))
             .when(status_bar, |d| d.child(self.render_status(cx)))
             .children(self.dialog.map(|d| self.render_dialog(d, window, cx)))
@@ -1825,7 +1822,6 @@ impl Workspace {
     fn render_dialog(&self, d: Dialog, window: &Window, cx: &mut Context<Self>) -> AnyElement {
         let content = match d {
             Dialog::About => Self::render_about(window, cx),
-            Dialog::Updates => Self::render_updates(cx),
         };
         deferred(
             div()
@@ -1845,7 +1841,7 @@ impl Workspace {
                         .id("dialog")
                         .occlude()
                         .on_mouse_down(MouseButton::Left, |_, _, cx| cx.stop_propagation())
-                        .w(px(if d == Dialog::About { 540. } else { 440. }))
+                        .w(px(540.))
                         // Small windows: the content scrolls, the footer stays.
                         .max_h(gpui::relative(0.94))
                         .flex()
@@ -1871,100 +1867,6 @@ impl Workspace {
         )
         .priority(3)
         .into_any_element()
-    }
-
-    /// "rustpad++ 0.2.0 is available" with install, release notes and skip.
-    fn render_update_bar(cx: &mut Context<Self>) -> Option<AnyElement> {
-        let release = update::available(cx)?;
-        let busy = cx.try_global::<update::Updates>().is_some_and(|u| u.busy);
-        let text = update::note(cx).unwrap_or_else(|| tr!("rustpad++ {version} is available.", version = release.version));
-        let page = release.page.clone();
-        let main = if update::can_update() {
-            ui::button("update-install", tr!("Install"), true)
-                .when(busy, |d| d.opacity(0.5))
-                .on_click(|_, _, cx| update::install(update::Action::Update, cx))
-        } else {
-            // A build run from its own folder cannot replace itself.
-            let page = page.clone();
-            ui::button("update-download", tr!("Download"), true).on_click(move |_, _, cx| cx.open_url(&page))
-        };
-        Some(
-            div()
-                .flex()
-                .flex_row()
-                .items_center()
-                .gap_2()
-                .px_3()
-                .py_1()
-                .bg(theme::bg_panel())
-                .border_b_1()
-                .border_color(theme::accent())
-                .font_family(crate::ui::font())
-                .text_size(px(13.))
-                .child(div().text_color(theme::accent()).child("⬆"))
-                .child(div().flex_1().min_w_0().overflow_hidden().text_ellipsis().whitespace_nowrap().child(text))
-                .child(main)
-                .child(ui::button("update-notes", tr!("What's new?"), false).on_click(move |_, _, cx| cx.open_url(&page)))
-                .child(
-                    ui::button("update-skip", tr!("Skip this version"), false)
-                        .when(busy, |d| d.opacity(0.5))
-                        .on_click(|_, _, cx| update::skip(cx)),
-                )
-                .into_any_element(),
-        )
-    }
-
-    /// Help → Check for Updates: version, state of the check, and what can be done.
-    fn render_updates(cx: &mut Context<Self>) -> AnyElement {
-        let (text, dot) = update::status(cx);
-        let state = cx.try_global::<update::Updates>();
-        let (busy, checking) = state.map_or((false, false), |u| (u.busy, u.checking));
-        let newer = update::newer(cx);
-        let mut buttons = div().flex().flex_row().flex_wrap().gap_2().child(
-            ui::button("updates-check", tr!("Check now"), newer.is_none())
-                .when(checking || busy, |d| d.opacity(0.5))
-                .on_click(|_, _, cx| update::check(cx)),
-        );
-        if let Some(release) = newer {
-            buttons = buttons.child(if update::can_update() {
-                ui::button("updates-install", tr!("Install"), true)
-                    .when(busy, |d| d.opacity(0.5))
-                    .on_click(|_, _, cx| update::install(update::Action::Update, cx))
-            } else {
-                ui::button("updates-download", tr!("Download"), true).on_click(move |_, _, cx| cx.open_url(&release.page))
-            });
-        }
-        if update::is_build() {
-            buttons = buttons.child(
-                ui::button("updates-install-app", tr!("Install for all users"), false)
-                    .when(busy, |d| d.opacity(0.5))
-                    .on_click(|_, _, cx| update::install(update::Action::InstallApp, cx)),
-            );
-        }
-        div()
-            .p_6()
-            .flex()
-            .flex_col()
-            .gap_3()
-            .child(div().text_size(px(18.)).child(tr!("Check for Updates")))
-            .child(div().text_color(theme::text_dim()).child(tr!("Installed version: {version}", version = update::VERSION)))
-            .child(
-                div()
-                    .flex()
-                    .flex_row()
-                    .items_center()
-                    .gap_2()
-                    .child(div().flex_none().size(px(10.)).rounded_full().bg(dot))
-                    .child(text),
-            )
-            .children(update::note(cx).map(|n| div().text_size(px(12.)).text_color(theme::warn()).child(n)))
-            .child(buttons)
-            .when(update::is_build(), |d| {
-                d.child(div().text_size(px(12.)).text_color(theme::text_faint()).child(tr!(
-                    "This rustpad++ runs from its build folder. Installed for all users, it gets a menu entry and can update itself."
-                )))
-            })
-            .into_any_element()
     }
 
     fn render_about(window: &Window, cx: &App) -> AnyElement {

@@ -2,6 +2,13 @@
 
 What changed in each version of rustpad++. The newest version is at the top.
 
+## Unreleased
+
+- The in-app update check and installer are removed: rustpad++ no longer
+  accesses the network at all. New versions are on the releases page.
+- Releases are no longer signed, so the release workflow needs no signing key.
+- New translation: Simplified Chinese.
+
 ## 0.4.2 - 2026-10-31
 
 - The table view keeps the column headers above their columns when

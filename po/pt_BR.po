@@ -34,10 +34,6 @@ msgstr "Aparência"
 msgid "Applies immediately to all windows"
 msgstr "Aplica-se imediatamente a todas as janelas"
 
-#: src/settings_window.rs:416
-msgid "Asks GitHub for a newer version 30 seconds after the start and every 6 hours. GitHub sees your IP address, nothing else."
-msgstr "Consulta o GitHub por uma versão mais recente 30 segundos após o início e a cada 6 horas. O GitHub vê apenas o seu endereço IP, nada mais."
-
 #: src/workspace.rs:1910
 msgid "Author"
 msgstr "Autor"
@@ -70,30 +66,6 @@ msgstr "Não é possível abrir {path}: {error}"
 msgid "Changelog"
 msgstr "Histórico de alterações"
 
-#: src/workspace.rs:1695
-msgid "Check for Updates"
-msgstr "Verificar atualizações"
-
-#: src/menu.rs:196
-msgid "Check for Updates…"
-msgstr "Verificar atualizações…"
-
-#: src/settings_window.rs:415
-msgid "Check for updates"
-msgstr "Verificar atualizações"
-
-#: src/workspace.rs:1670
-msgid "Check now"
-msgstr "Verificar agora"
-
-#: src/update.rs:172
-msgid "Checking…"
-msgstr "Verificando…"
-
-#: src/update.rs:176
-msgid "Checks shortly after the start."
-msgstr "Verifica logo após o início."
-
 #: src/settings_window.rs:382
 msgid "Clear ({count})"
 msgstr "Limpar ({count})"
@@ -121,10 +93,6 @@ msgstr "Copiar"
 #: src/settings_window.rs:230
 msgid "Could not change the default application: {error}"
 msgstr "Não foi possível alterar o aplicativo padrão: {error}"
-
-#: src/update.rs:174
-msgid "Could not check for updates."
-msgstr "Não foi possível verificar atualizações."
 
 #: src/menu.rs:64
 msgid "Ctrl"
@@ -169,10 +137,6 @@ msgstr "Descartar"
 #: src/workspace.rs:833
 msgid "Document changed while searching - nothing replaced"
 msgstr "Documento alterado durante a pesquisa - nada substituído"
-
-#: src/settings_window.rs:403 src/workspace.rs:1635 src/workspace.rs:1680
-msgid "Download"
-msgstr "Baixar"
 
 #: src/menu.rs:160
 msgid "Duplicate Line"
@@ -294,22 +258,6 @@ msgstr "Ignorar"
 msgid "Inspired by Notepad++ by Don Ho."
 msgstr "Inspirado no Notepad++ de Don Ho."
 
-#: src/settings_window.rs:399 src/workspace.rs:1629 src/workspace.rs:1676
-msgid "Install"
-msgstr "Instalar"
-
-#: src/settings_window.rs:408 src/workspace.rs:1685
-msgid "Install for all users"
-msgstr "Instalar para todos os usuários"
-
-#: src/workspace.rs:1696
-msgid "Installed version: {version}"
-msgstr "Versão instalada: {version}"
-
-#: src/update.rs:184
-msgid "Installing the update…"
-msgstr "Instalando a atualização…"
-
 #: src/menu.rs:176 src/workspace.rs:1889
 msgid "JSON Tree"
 msgstr "Árvore JSON"
@@ -385,18 +333,6 @@ msgstr "Sem excessos, sem espera - só o seu arquivo."
 #: src/settings_window.rs:381
 msgid "No entries"
 msgstr "Nenhuma entrada"
-
-#: src/update.rs:188
-msgid "No password prompt is available here. Run this in a terminal:"
-msgstr "Não é possível pedir a senha aqui. Execute isto em um terminal:"
-
-#: src/update.rs:185
-msgid "Not allowed, or wrong password."
-msgstr "Sem permissão ou senha incorreta."
-
-#: src/update.rs:175
-msgid "Not checked: the check is switched off."
-msgstr "Não verificado: a verificação está desativada."
 
 #: src/workspace.rs:831 src/workspace.rs:966
 msgid "Not found"
@@ -578,10 +514,6 @@ msgstr "Mostrar barra de status"
 msgid "Single window"
 msgstr "Janela única"
 
-#: src/workspace.rs:1655
-msgid "Skip this version"
-msgstr "Pular esta versão"
-
 #: src/workspace.rs:1898
 msgid "Source code"
 msgstr "Código-fonte"
@@ -614,14 +546,6 @@ msgstr "Arquivos de texto"
 msgid "Thanks for more than 20 years of a great example."
 msgstr "Obrigado por mais de 20 anos de um ótimo exemplo."
 
-#: src/update.rs:186
-msgid "The update did not work: {error}"
-msgstr "A atualização não funcionou: {error}"
-
-#: src/settings_window.rs:449 src/workspace.rs:1709
-msgid "This rustpad++ runs from its build folder. Installed for all users, it gets a menu entry and can update itself."
-msgstr "Este rustpad++ está sendo executado da pasta de compilação. Instalado para todos os usuários, ele ganha uma entrada no menu e pode se atualizar sozinho."
-
 #: src/menu.rs:151
 msgid "Undo"
 msgstr "Desfazer"
@@ -634,10 +558,6 @@ msgstr "Alterações não salvas em {name} não restauradas ({why}) - o backup e
 msgid "Up to 5 files in the File menu"
 msgstr "Até 5 arquivos no menu Arquivo"
 
-#: src/settings_window.rs:413
-msgid "Updates"
-msgstr "Atualizações"
-
 #: src/settings_window.rs:356
 msgid "User interface"
 msgstr "Interface do usuário"
@@ -646,17 +566,9 @@ msgstr "Interface do usuário"
 msgid "Version {version}"
 msgstr "Versão {version}"
 
-#: src/update.rs:171
-msgid "Version {version} is available."
-msgstr "A versão {version} está disponível."
-
 #: src/menu.rs:172
 msgid "View"
 msgstr "Exibir"
-
-#: src/workspace.rs:1653
-msgid "What's new?"
-msgstr "O que há de novo?"
 
 #: src/workspace.rs:1202
 msgid "Whole word"
@@ -725,14 +637,6 @@ msgstr "número da linha, 0x<deslocamento> ou <porcentagem>%"
 #: src/views/json.rs:946
 msgid "line {line}"
 msgstr "linha {line}"
-
-#: src/update.rs:173
-msgid "rustpad++ is up to date."
-msgstr "O rustpad++ está atualizado."
-
-#: src/workspace.rs:1626
-msgid "rustpad++ {version} is available."
-msgstr "O rustpad++ {version} está disponível."
 
 #: src/views/json.rs:982
 msgid "scanning…"

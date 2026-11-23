@@ -24,12 +24,7 @@ cargo build --release
 ```
 
 A copy run from `target/release` adds itself to the application menu of your
-user. *Help → Check for Updates → Install for all users* installs it under
-`/usr/local` instead, where it can update itself.
-
-`RUSTPAD_UPDATE_FAKE=0.9.0` pretends that version is out, to see the update
-offer without a release; `RUSTPAD_UPDATE_DELAY=<seconds>` shortens the wait
-before the first check.
+user.
 
 Before a pull request, run both of these; they should pass without warnings:
 
@@ -65,9 +60,8 @@ catalog is reviewed, drop the note from its first line.
 |---|---|
 | [`src/doc`](src/doc) | The document: memory-mapped piece table, line index, rows and wrapping, encodings, type detection |
 | [`src/views`](src/views) | Text, hex, JSON tree and Markdown views |
-| [`src`](src) | Window, menus, dialogs, settings, session, translations, updates (`update.rs`, `manage.rs`) |
-| [`crates/rustpad-update`](crates/rustpad-update) | Finding, verifying and unpacking releases; key and signing tools |
-| [`packaging`](packaging) | Polkit rules, release key, package build |
+| [`src`](src) | Window, menus, dialogs, settings, session, translations, how the program is installed (`install.rs`) |
+| [`packaging`](packaging) | Package build |
 | [`patches`](patches) | Patched copies of dependencies, mostly of GPUI for a faster start; the reasons are noted in `Cargo.toml` |
 | [`assets`](assets) | Logo, icons, menu entry template |
 | [`po`](po) | Translations |
@@ -80,17 +74,5 @@ catalog is reviewed, drop the note from its first line.
 `dev/release.sh 0.2.0` sets the version, runs the tests, commits, tags and
 pushes. The tag starts the release workflow: it tests, builds on Ubuntu 22.04
 (so the program runs on older systems too), packs the archive, the Debian
-package and the AppImage with `packaging/build-packages.sh`, signs all three
-and publishes them as the latest release.
-
-Installed copies find it by themselves: the Debian package updates through
-apt, an installation under `/usr/local` replaces itself (both run
-`rustpad --update` as root through pkexec, which downloads and checks the
-release on its own), and an AppImage replaces its own file.
-
-The signing key is made once with
-`cargo run -p rustpad-update --example release-key -- <secret key file>`.
-Its public half goes into `packaging/minisign.pub` and is built into every
-copy of rustpad++; the secret half goes into the repository secret
-`MINISIGN_SECRET_KEY`. Keep a backup of the secret key: without it, installed
-copies cannot verify new releases.
+package and the AppImage with `packaging/build-packages.sh` and publishes
+them as the latest release.

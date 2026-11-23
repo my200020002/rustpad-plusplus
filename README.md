@@ -58,9 +58,8 @@ make it executable and start it.
 - **Built for logs.** Follow a growing file like `tail -f`, jump to a line, a
   byte offset or a percentage, and get told when another program changes,
   truncates or deletes the file.
-- **Quiet and trustworthy.** No telemetry, no account. The only network
-  access is the update check, which can be switched off; updates are signed,
-  and only a correctly signed one is installed.
+- **Quiet and trustworthy.** No telemetry, no account, no network access at
+  all: rustpad++ never talks to anyone.
 
 ### How it compares
 
@@ -135,10 +134,10 @@ Every [release](https://github.com/srcmkr/rustpad-plusplus/releases/latest) has 
 |---|---|---|
 | Debian, Ubuntu, Linux Mint | `rustpad_<version>_amd64.deb` | `sudo apt install ./rustpad_*_amd64.deb` |
 | Any other distribution | `Rustpad-<version>-x86_64.AppImage` | `chmod +x Rustpad-*.AppImage && ./Rustpad-*.AppImage` |
-| By hand | `rustpad-<version>-x86_64-linux.tar.gz` | Unpack, start `./rustpad`, then *Help → Check for Updates → Install for all users* |
+| By hand | `rustpad-<version>-x86_64-linux.tar.gz` | Unpack, start `./rustpad`, or copy it to e.g. `/usr/local/bin` |
 
-New versions are offered in the app and installed on request; every file of a
-release is signed, and only a correctly signed one is installed. The
+rustpad++ does not check for updates on its own; new versions are on the
+[releases page](https://github.com/srcmkr/rustpad-plusplus/releases). The
 AppImage and a copy run from its folder add themselves to the application
 menu. Under *Settings → File Types* rustpad++ can become the default
 application for text, log, Markdown, JSON and other files.

@@ -206,13 +206,7 @@ impl Workspace {
             },
             Menu {
                 label: tr!("Help"),
-                items: vec![
-                    action(tr!("Check for Updates…"), None, |ws, _, cx| {
-                        ws.show_dialog(Dialog::Updates, cx);
-                        crate::update::check(cx);
-                    }),
-                    action(tr!("About rustpad++"), None, |ws, _, cx| ws.show_dialog(Dialog::About, cx)),
-                ],
+                items: vec![action(tr!("About rustpad++"), None, |ws, _, cx| ws.show_dialog(Dialog::About, cx))],
             },
         ]
     }

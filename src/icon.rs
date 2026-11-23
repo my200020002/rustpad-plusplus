@@ -102,7 +102,7 @@ pub fn refresh_caches(hicolor: &Path, icons_changed: bool, applications: &Path, 
 }
 
 fn write_desktop_entry() -> Option<()> {
-    use rustpad_update::layout::Install;
+    use crate::install::Install;
     let data = std::env::var_os("XDG_DATA_HOME")
         .filter(|d| !d.is_empty())
         .map(PathBuf::from)

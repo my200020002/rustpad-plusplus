@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Packs the release build into what a release offers: an archive, a Debian
 # package and an AppImage, in dist/. Run after `cargo build --release`; the
-# release workflow does exactly this, then signs the files.
+# release workflow does exactly this.
 #
 # Usage: packaging/build-packages.sh VERSION
 set -euo pipefail
@@ -33,7 +33,7 @@ icons() {
     install -Dm 644 assets/logo/rustpad.svg "$1/scalable/apps/rustpad.svg"
 }
 
-# --- Archive: the program, for "Install for all users" and updates.
+# --- Archive: the program, to install by hand.
 name=rustpad-$version-$arch-linux
 mkdir "$work/$name"
 cp "$bin" README.md LICENSE-MIT LICENSE-APACHE "$work/$name/"
@@ -43,14 +43,12 @@ tar -C "$work" -czf "dist/$name.tar.gz" "$name"
 # --- Debian package.
 deb=$work/deb
 app=/usr/bin/rustpad
-mkdir -p "$deb/DEBIAN" "$deb/usr/bin" "$deb/usr/share/applications" "$deb/usr/share/polkit-1/actions" \
-    "$deb/usr/share/doc/rustpad"
+mkdir -p "$deb/DEBIAN" "$deb/usr/bin" "$deb/usr/share/applications" "$deb/usr/share/doc/rustpad"
 install -m 755 "$work/$name/rustpad" "$deb$app"
 "$deb$app" --desktop-entry "$app" > "$deb/usr/share/applications/rustpad.desktop"
-sed "s|@APP@|$app|g" packaging/io.github.srcmkr.rustpad.policy > "$deb/usr/share/polkit-1/actions/io.github.srcmkr.rustpad.policy"
 icons "$deb/usr/share/icons/hicolor"
 cat LICENSE-MIT LICENSE-APACHE > "$deb/usr/share/doc/rustpad/copyright"
-chmod 644 "$deb"/usr/share/applications/* "$deb"/usr/share/polkit-1/actions/* "$deb/usr/share/doc/rustpad/copyright"
+chmod 644 "$deb"/usr/share/applications/* "$deb/usr/share/doc/rustpad/copyright"
 
 cat > "$deb/DEBIAN/control" <<CONTROL
 Package: rustpad
@@ -61,7 +59,7 @@ Architecture: $deb_arch
 Maintainer: srcmkr <srcmkr@users.noreply.github.com>
 Homepage: https://github.com/srcmkr/rustpad-plusplus
 Depends: libc6 (>= 2.35), libgcc-s1, libxkbcommon0, libxkbcommon-x11-0, libxcb1, libfontconfig1, libfreetype6, libwayland-client0, libvulkan1
-Recommends: pkexec | policykit-1, xdg-utils
+Recommends: xdg-utils
 Installed-Size: $(du -sk "$deb" | cut -f1)
 Description: Fast text editor for files of any size, in the spirit of Notepad++
  rustpad++ opens files of any size instantly - as text, hex, JSON tree or
