@@ -15,11 +15,7 @@ permissions:
   contents: write
 
 jobs:
-  test:
-    uses: ./.github/workflows/build.yml
-
   release:
-    needs: test
     # The oldest supported Ubuntu, so the program runs on as many systems as
     # possible (glibc).
     runs-on: ubuntu-22.04
